@@ -18,4 +18,8 @@ private:
 
     std::unique_ptr<Motor> left_wheel = std::make_unique<Motor>(Motor(handles.left_wheel));
     std::unique_ptr<Motor> right_wheel = std::make_unique<Motor>(Motor(handles.right_wheel));
+
+    Eigen::Vector2d target_vel_;
+
+    void estimateTargetVel();
 };

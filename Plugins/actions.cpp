@@ -13,10 +13,9 @@ int Robot::waitAtDoor()
 
 int Robot::moveToCustomer()
 {
-    const float STOP_DIS = 1.2;
     float dist = sqrt(pow(data.robot_x - data.customer_x, 2) + pow(data.robot_y - data.customer_y, 2));
 
-    if (dist > STOP_DIS)
+    if (dist > 2)
         chassis->moveToCustomer();
     else
         chassis->stop();
