@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1005/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1035/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1005/bin/cmake -E rm -f
+RM = /snap/cmake/1035/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/1005/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1035/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -97,37 +97,37 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/cmake/1005/bin/cmake -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/cmake/1005/bin/cmake -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/cmake/1005/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/cmake/1005/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/cmake/1005/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/cmake/1005/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/cmake/1035/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
@@ -174,101 +174,29 @@ solicit_simulation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/build
 .PHONY : solicit_simulation/fast
 
-actions.o: actions.cpp.o
-.PHONY : actions.o
+coppelia_interface.o: coppelia_interface.cpp.o
+.PHONY : coppelia_interface.o
 
 # target to build an object file
-actions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/actions.cpp.o
-.PHONY : actions.cpp.o
+coppelia_interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppelia_interface.cpp.o
+.PHONY : coppelia_interface.cpp.o
 
-actions.i: actions.cpp.i
-.PHONY : actions.i
-
-# target to preprocess a source file
-actions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/actions.cpp.i
-.PHONY : actions.cpp.i
-
-actions.s: actions.cpp.s
-.PHONY : actions.s
-
-# target to generate assembly for a file
-actions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/actions.cpp.s
-.PHONY : actions.cpp.s
-
-chassis.o: chassis.cpp.o
-.PHONY : chassis.o
-
-# target to build an object file
-chassis.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/chassis.cpp.o
-.PHONY : chassis.cpp.o
-
-chassis.i: chassis.cpp.i
-.PHONY : chassis.i
+coppelia_interface.i: coppelia_interface.cpp.i
+.PHONY : coppelia_interface.i
 
 # target to preprocess a source file
-chassis.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/chassis.cpp.i
-.PHONY : chassis.cpp.i
+coppelia_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppelia_interface.cpp.i
+.PHONY : coppelia_interface.cpp.i
 
-chassis.s: chassis.cpp.s
-.PHONY : chassis.s
-
-# target to generate assembly for a file
-chassis.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/chassis.cpp.s
-.PHONY : chassis.cpp.s
-
-common.o: common.cpp.o
-.PHONY : common.o
-
-# target to build an object file
-common.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/common.cpp.o
-.PHONY : common.cpp.o
-
-common.i: common.cpp.i
-.PHONY : common.i
-
-# target to preprocess a source file
-common.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/common.cpp.i
-.PHONY : common.cpp.i
-
-common.s: common.cpp.s
-.PHONY : common.s
+coppelia_interface.s: coppelia_interface.cpp.s
+.PHONY : coppelia_interface.s
 
 # target to generate assembly for a file
-common.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/common.cpp.s
-.PHONY : common.cpp.s
-
-coppeliasim_interface.o: coppeliasim_interface.cpp.o
-.PHONY : coppeliasim_interface.o
-
-# target to build an object file
-coppeliasim_interface.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppeliasim_interface.cpp.o
-.PHONY : coppeliasim_interface.cpp.o
-
-coppeliasim_interface.i: coppeliasim_interface.cpp.i
-.PHONY : coppeliasim_interface.i
-
-# target to preprocess a source file
-coppeliasim_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppeliasim_interface.cpp.i
-.PHONY : coppeliasim_interface.cpp.i
-
-coppeliasim_interface.s: coppeliasim_interface.cpp.s
-.PHONY : coppeliasim_interface.s
-
-# target to generate assembly for a file
-coppeliasim_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppeliasim_interface.cpp.s
-.PHONY : coppeliasim_interface.cpp.s
+coppelia_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/coppelia_interface.cpp.s
+.PHONY : coppelia_interface.cpp.s
 
 home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.o: home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.cpp.o
 .PHONY : home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.o
@@ -342,53 +270,53 @@ home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.c
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.cpp.s
 .PHONY : home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.cpp.s
 
-motor.o: motor.cpp.o
-.PHONY : motor.o
+main_simulation.o: main_simulation.cpp.o
+.PHONY : main_simulation.o
 
 # target to build an object file
-motor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/motor.cpp.o
-.PHONY : motor.cpp.o
+main_simulation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/main_simulation.cpp.o
+.PHONY : main_simulation.cpp.o
 
-motor.i: motor.cpp.i
-.PHONY : motor.i
+main_simulation.i: main_simulation.cpp.i
+.PHONY : main_simulation.i
 
 # target to preprocess a source file
-motor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/motor.cpp.i
-.PHONY : motor.cpp.i
+main_simulation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/main_simulation.cpp.i
+.PHONY : main_simulation.cpp.i
 
-motor.s: motor.cpp.s
-.PHONY : motor.s
+main_simulation.s: main_simulation.cpp.s
+.PHONY : main_simulation.s
 
 # target to generate assembly for a file
-motor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/motor.cpp.s
-.PHONY : motor.cpp.s
+main_simulation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/main_simulation.cpp.s
+.PHONY : main_simulation.cpp.s
 
-sim_main.o: sim_main.cpp.o
-.PHONY : sim_main.o
+oat_planner.o: oat_planner.cpp.o
+.PHONY : oat_planner.o
 
 # target to build an object file
-sim_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/sim_main.cpp.o
-.PHONY : sim_main.cpp.o
+oat_planner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/oat_planner.cpp.o
+.PHONY : oat_planner.cpp.o
 
-sim_main.i: sim_main.cpp.i
-.PHONY : sim_main.i
+oat_planner.i: oat_planner.cpp.i
+.PHONY : oat_planner.i
 
 # target to preprocess a source file
-sim_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/sim_main.cpp.i
-.PHONY : sim_main.cpp.i
+oat_planner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/oat_planner.cpp.i
+.PHONY : oat_planner.cpp.i
 
-sim_main.s: sim_main.cpp.s
-.PHONY : sim_main.s
+oat_planner.s: oat_planner.cpp.s
+.PHONY : oat_planner.s
 
 # target to generate assembly for a file
-sim_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/sim_main.cpp.s
-.PHONY : sim_main.cpp.s
+oat_planner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solicit_simulation.dir/build.make CMakeFiles/solicit_simulation.dir/oat_planner.cpp.s
+.PHONY : oat_planner.cpp.s
 
 # Help Target
 help:
@@ -403,18 +331,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... solicit_simulation"
-	@echo "... actions.o"
-	@echo "... actions.i"
-	@echo "... actions.s"
-	@echo "... chassis.o"
-	@echo "... chassis.i"
-	@echo "... chassis.s"
-	@echo "... common.o"
-	@echo "... common.i"
-	@echo "... common.s"
-	@echo "... coppeliasim_interface.o"
-	@echo "... coppeliasim_interface.i"
-	@echo "... coppeliasim_interface.s"
+	@echo "... coppelia_interface.o"
+	@echo "... coppelia_interface.i"
+	@echo "... coppelia_interface.s"
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.o"
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.i"
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/scriptFunctionData.s"
@@ -424,12 +343,12 @@ help:
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.o"
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.i"
 	@echo "... home/hao/Programs/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04/programming/common/simLib.s"
-	@echo "... motor.o"
-	@echo "... motor.i"
-	@echo "... motor.s"
-	@echo "... sim_main.o"
-	@echo "... sim_main.i"
-	@echo "... sim_main.s"
+	@echo "... main_simulation.o"
+	@echo "... main_simulation.i"
+	@echo "... main_simulation.s"
+	@echo "... oat_planner.o"
+	@echo "... oat_planner.i"
+	@echo "... oat_planner.s"
 .PHONY : help
 
 

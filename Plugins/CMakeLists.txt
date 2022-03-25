@@ -23,12 +23,9 @@ coppeliasim_add_plugin(
     solicit_simulation
     LEGACY
     SOURCES
-    coppeliasim_interface.cpp
-    sim_main.cpp
-    common.cpp
-    chassis.cpp
-    motor.cpp
-    actions.cpp
+    coppelia_interface.cpp
+    main_simulation.cpp
+    oat_planner.cpp
     ${COPPELIASIM_COMMON_DIR}/scriptFunctionData.cpp
     ${COPPELIASIM_COMMON_DIR}/scriptFunctionDataItem.cpp
 )
